@@ -1,0 +1,318 @@
+# For uwsm start
+# exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+# set $term exec uwsm app -T
+set $term kitty
+# Your preferred application launcher
+set $menu killall wofi || wofi --show drun --define=drun-print_desktop_file=true
+
+# For networkmanager menu
+set $networkmanager killall nm-connection-editor || exec uwsm app -- nm-connection-editor.desktop
+
+set $clipboard killall wofi || exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+# Gtk theming and stuff here
+set $gnome-schema org.gnome.desktop.interface
+set $gnome-wm org.gnome.desktop.wm.preferences
+set $gnome-sound org.gnome.desktop.sound
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Gruvbox-Yellow-Dark'
+	gsettings set $gnome-schema icon-theme 'Gruvbox-Plus-Dark'
+	gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Classic'
+	gsettings set $gnome-schema font-name 'IosevkaTermNerdFont 10'
+	gsettings set $gnome-wm button-layout ""
+	gsettings set $gnome-sound theme-name "freedesktop"
+	gsettings set $gnome-sound input-feedback-sounds true
+	gsettings set $gnome-sound event-sounds true
+}
+seat seat0 xcursor_theme Bibata-Modern-Classic 24
+
+exec gentoo-pipewire-launcher restart &
+
+# Play the startup sound
+exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 80%
+exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
+
+exec swayidle -C ~/.config/sway/swayidle
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg $HOME/.local/share/backgrounds/sway/platform.jpg fill
+
+# Or set a random wallpaper
+# set $wallpapers_path $HOME/.local/share/backgrounds/sway
+# output * bg $(find $wallpapers_path -type f | shuf -n 1) fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Input configuration
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym --to-code $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menu
+
+    # Show the clipboard
+    bindsym $mod+c exec $clipboard
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+$left move left
+    bindsym $mod+Shift+$down move down
+    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$right move right
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $mod+1 workspace number 1
+    bindsym $mod+2 workspace number 2
+    bindsym $mod+3 workspace number 3
+    bindsym $mod+4 workspace number 4
+    bindsym $mod+5 workspace number 5
+    bindsym $mod+6 workspace number 6
+    bindsym $mod+7 workspace number 7
+    bindsym $mod+8 workspace number 8
+    bindsym $mod+9 workspace number 9
+    bindsym $mod+0 workspace number 10
+    # Move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+7 move container to workspace number 7
+    bindsym $mod+Shift+8 move container to workspace number 8
+    bindsym $mod+Shift+9 move container to workspace number 9
+    bindsym $mod+Shift+0 move container to workspace number 10
+    # Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+
+    # Toggle it a bit
+    bindsym $mod+tab workspace next
+
+    # Shuffle through workspaces which are not existing
+    set $num_of_workspaces 10
+    bindsym $mod+o exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="left"  -v num_of_workspaces=$num_of_workspaces
+    bindsym $mod+p exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="right" -v num_of_workspaces=$num_of_workspaces
+    bindsym $mod+shift+o exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="container_left"  -v num_of_workspaces=$num_of_workspaces
+    bindsym $mod+shift+p exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="container_right" -v num_of_workspaces=$num_of_workspaces
+    # Same thing but with gestures
+    bindgesture swipe:3:right exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="left"  -v num_of_workspaces=$num_of_workspaces
+    bindgesture swipe:3:left exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="right" -v num_of_workspaces=$num_of_workspaces
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively. For cancelling any layout press mod+n
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+    bindsym $mod+n split none
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+#
+# Utilities:
+#
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec wpctl set-mute \@DEFAULT_AUDIO_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec wpctl set-volume \@DEFAULT_AUDIO_SINK@ 5%-
+    bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume \@DEFAULT_AUDIO_SINK@ 5%+ -l 1
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+    # For player keys
+    bindsym --locked XF86AudioNext exec playerctl next
+    bindsym --locked XF86AudioPause exec playerctl play-pause
+    bindsym --locked XF86AudioPlay exec playerctl play-pause
+    bindsym --locked XF86AudioPrev exec playerctl previous
+    # Special key to take a screenshot with grim
+    bindsym Print exec grimshot --notify save output
+    bindsym Shift+Print exec grimshot --notify save area
+    bindsym Alt+Print exec grimshot --notify save active
+
+
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    position top
+
+    font pango:IosevkaTerma Nerd Font 9
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command i3status-rs
+
+    colors {
+	background         #1d2021
+	statusline         #ddc7a1
+    	focused_statusline #ddc7a1
+    	focused_separator  #1d2021
+
+    	focused_workspace  #1d2021  #d8a657    #141617
+    	active_workspace   #1d2021  #504945 #ddc7a1
+    	inactive_workspace #1d2021  #1d2021     #ddc7a1
+    	urgent_workspace   #1d2021  #ea6962      #141617
+    }
+}
+
+# The looks matter
+default_border pixel 2
+gaps inner 5
+gaps outer 2
+
+# Make it more appealing 
+# target                 title       bg    text   indicator  border
+client.focused           #ddc7a1   #1d2021 #ddc7a1 #7daea3 #d8a657
+client.focused_inactive  #282828 #1d2021 #ddc7a1  #7daea3 #282828
+client.unfocused         #282828 #1d2021 #ddc7a1  #7daea3 #282828
+client.urgent            #ea6962    #1d2021 #ea6962   #282828  #ea6962
+client.placeholder       #282828 #1d2021 #ddc7a1  #282828  #282828
+client.background        #1d2021
+
+
+include $HOME/.config/sway/config.d/*
+
+bindsym $mod+i exec qutebrowser
+# bindsym $mod+e exec exec uwsm app -- thunar.desktop
+bindsym $mod+Shift+e exec exec uwsm app -- yazi.desktop
+bindsym $mod+Shift+d exec $networmanager
+
+# Window rules from Gentoo wiki on sway
+# for_window [window_role = "pop-up"] floating enable
+# for_window [window_role = "bubble"] floating enable
+# for_window [window_role = "dialog"] floating enable
+# for_window [window_type = "dialog"] floating enable
+# for_window [window_role = "task_dialog"] floating enable
+# for_window [window_type = "menu"] floating enable
+# for_window [app_id = "floating"] floating enable
+# for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+# for_window [class = "(?i)pinentry"] floating enable
+# for_window [title = "Administrator privileges required"] floating enable
+# 
+# for_window [title = "About Mozilla Firefox"] floating enable
+# for_window [window_role = "About"] floating enable
+# for_window [app_id="firefox" title="Library"] floating enable, border normal, sticky enable
+# for_window [app_id="org.nickvision.tubeconverter" title="Parabolic"] floating enable, border normal
+# for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, border normal, sticky enable, resize set width 50px height 50px
+# for_window [app_id="uget-gtk"] floating enable, border normal
+# 
+# for_window [class="VirtualBoxVM" title="Create Virtual Machine"] floating enable, border normal
+# for_window [class="VirtualBoxVM" title="Archlinux-Soft Keyboard"] floating enable, border normal
+# for_window [app_id="thunar" title="File Operation Progress"] floating enable, border normal
+# for_window [app_id="thunar" title="%Thunar%"] floating enable
+# 
+# for_window [app_id="nm-connection-editor"] floating enable, border normal, resize set width 600 height 400
+# for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, border normal, resize set width 820 height 640
+# 
+# for_window [title="Open Folder"] floating enable, border normal, resize set width 893 height 575
+# 
+# for_window [app_id="org.pwmt.zathura"] inhibit_idle visible
+# 
+# for_window [app_id="mpv"] inhibit_idle visible
