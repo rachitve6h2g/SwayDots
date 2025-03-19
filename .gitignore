@@ -1,0 +1,5 @@
+# Ignore everything inside this directory
+/qutebrowser/.local/share/qutebrowser/**
+
+!/qutebrowser/.local/share/userscripts/
+!/qutebrowser/.local/share/userscripts/**
