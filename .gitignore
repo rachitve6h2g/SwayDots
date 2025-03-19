@@ -1,0 +1,45 @@
+# Ignore all files in .local
+.local/*
+
+# but don't ignore these
+!.local/share/qutebrowser/userscripts/**
+!.local/share/qutebrowser/userscripts/
+!.local/share/backgrounds
+!.local/share/icons/Bibata-Modern-Classic
+
+# Ignore everything in the .config directory
+.config/*
+
+# But don't ignore these files
+!.config/btop/btop.conf
+!.config/btop/themes/**
+
+!.config/btop/i3status-rs/*
+!.config/kitty/*.conf
+!.config/mako
+!.config/mpv
+!.config/nvim
+
+# But ignore nvim/lazy-lock
+.config/nvim/lazy-lock.*
+
+!.config/qutebrowser/__pycache__
+!.config/sway/*
+!.config/swaylock
+
+# Ignore every target.wants in the systemd directory
+.config/systemd/user/*
+
+# Allow tracking of manually created services
+!.config/systemd/user/*.service
+!.config/systemd/user/*.timer
+!.config/systemd/user/*.socket
+!.config/systemd/user/*.target
+
+# Ignore xfce fricking stuff
+.config/xfce4
+
+!.config/yazi
+!.config/zathura
+!.config/zsh
+!.config/starship.toml
