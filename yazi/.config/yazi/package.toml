@@ -38,6 +38,21 @@ use = "yazi-rs/plugins:smart-enter"
 rev = "5186af7"
 hash = "aef2b1a805b80cce573bb766f1459d88"
 
+[[plugin.deps]]
+use = "lpanebr/yazi-plugins:yatline-symlink"
+rev = "ca18a2c"
+hash = "32939ad5b4738c2595a904997fd30ea6"
+
+[[plugin.deps]]
+use = "imsi32/yatline-githead"
+rev = "3b0eb7c"
+hash = "bfd30c396bbe2af526cb949d97ce3dcf"
+
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "8103065"
+hash = "9f13f0740fa3a0c18e47ec6fb62ddfaa"
+
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
 rev = "b4cc9f2"
