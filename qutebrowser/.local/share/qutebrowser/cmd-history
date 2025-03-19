@@ -1,0 +1,14 @@
+:adblock-update
+:open what the heck
+:q
+:open chatgpt how to specify files/directories in a git directory that are to be pushed and that aren't to be. Suppose that this directory might be a dotfiles directory and contains many subdirectories.
+:open -t nerdfonts
+:open -t i3status-rust
+/time
+:open -t Portonics hydra 10
+:open -t backlit compact keyboards
+:open -t yatline gruvbox
+:open yatline themes
+:open github
+:open -t how to manage dotfiles using git and .gitignore
+:open -t how to initialize a git directory and add a ssh git repo to it
