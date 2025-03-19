@@ -3,3 +3,9 @@
 
 !/qutebrowser/.local/share/userscripts/
 !/qutebrowser/.local/share/userscripts/**
+
+# Ignore the btop.log thing
+/btop/.config/btop/btop.log
+
+# Ignore the .zcompdump
+/zsh/.config/zsh/.zcompdump
