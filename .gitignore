@@ -1,5 +1,7 @@
 # but don't ignore these
 /.local/*
+!/.local/share/**
+!/.local/share/qutebrowser/userscripts/**
 /.config/qutebrowser/__pycache__
 /.config/btop/*.log
 /.config/systemd/*.target.wants
