@@ -1,9 +1,15 @@
+# Ignore everything inside the VSCodium directory
+/VSCodium/.config/VSCodium/**
+# # Except the user settings
+!/VSCodium/.config/VSCodium/User/
+!/VSCodium/.config/VSCodium/User/settings.json
+
 # Ignore everything inside this directory
 /qutebrowser/.local/share/qutebrowser/**
 
 # But track these
-!/qutebrowser/.local/share/userscripts/
-!/qutebrowser/.local/share/userscripts/**
+!/qutebrowser/.local/share/qutebrowser/userscripts/
+!/qutebrowser/.local/share/qutebrowser/userscripts/**
 
 # And ignore the qsettings/QtProject.conf
 /qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
