@@ -1,6 +1,7 @@
 source $ZDOTDIR/aliases.zsh
 source /usr/share/fzf/key-bindings.zsh
-source $ZDOTDIR/fzf_catppuccin.zsh
+# source $ZDOTDIR/fzf_catppuccin.zsh
+source $ZDOTDIR/fzf_gruvbox_material.zsh
 # For the vim keybindings in zsh set the editor variable
 export EDITOR='nvim'
 

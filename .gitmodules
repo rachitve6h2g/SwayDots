@@ -1,3 +1,6 @@
 [submodule "yazi/.config/yazi/plugins/yatline-gruvbox-material.yazi"]
 	path = yazi/.config/yazi/plugins/yatline-gruvbox-material.yazi
 	url = https://github.com/imsi32/yatline-gruvbox-material.yazi.git
+[submodule "Gruvbox_Icons/gruvbox-plus-icon-pack"]
+	path = Gruvbox_Icons/gruvbox-plus-icon-pack
+	url = https://github.com/SylEleuth/gruvbox-plus-icon-pack.git
