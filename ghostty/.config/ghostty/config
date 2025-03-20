@@ -45,8 +45,10 @@
 # Set by me
 theme = gruvbox-material-hard-dark
 shell-integration = zsh
-shell-integration-features = sudo,no-title
+shell-integration-features = no-cursor,sudo,no-title
 
 font-family = "IosevkaTerm Nerd Font"
 
 app-notifications = true
+
+cursor-style = underline
