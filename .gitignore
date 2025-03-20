@@ -9,3 +9,14 @@
 
 # Ignore the .zcompdump
 /zsh/.config/zsh/.zcompdump
+
+# Ignore every target.wants symlink in the systemd user directory
+/systemd/.config/systemd/user/**
+/systemd/.config/systemd/user/*.wants
+!/systemd/.config/systemd/user/cliphist.service
+!/systemd/.config/systemd/user/news_notify.service
+!/systemd/.config/systemd/user/news_notify.timer
+!/systemd/.config/systemd/user/playerctld.service
+!/systemd/.config/systemd/user/swayidle.service
+!/systemd/.config/systemd/user/swaypolkitagent.service
+!/systemd/.config/systemd/user/thunard.service
