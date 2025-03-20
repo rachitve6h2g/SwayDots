@@ -9,4 +9,4 @@ export XCURSOR_THEME=Bibata-Modern-Classic
 
 export ELECTRON_OZONE_PLATFORM_HINT='wayland'
 
-export GTK_THEME='Catppuccin-Mocha-Mauve'
+export GTK_THEME='Gruvbox-Yellow-Dark'
