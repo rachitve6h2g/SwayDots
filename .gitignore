@@ -20,3 +20,6 @@
 !/systemd/.config/systemd/user/swayidle.service
 !/systemd/.config/systemd/user/swaypolkitagent.service
 !/systemd/.config/systemd/user/thunard.service
+
+# Ignore everything inside the Gruvbox directory
+/Gruvbox_Icons/**
