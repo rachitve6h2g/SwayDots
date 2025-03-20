@@ -1,0 +1,112 @@
+* {
+  font-family: 'IosevkaTerm Nerd Font';
+  font-size: 14px;
+}
+
+/* Window */
+window {
+  margin: 0px;
+  padding: 10px;
+  border: 0.16em solid #d8a657;
+  border-radius: 0.1em;
+  background-color: #141617;
+  animation: slideIn 0.5s ease-in-out both;
+}
+
+/* Slide In */
+@keyframes slideIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Inner Box */
+#inner-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: #141617;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+/* Outer Box */
+#outer-box {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background-color: #141617;
+}
+
+/* Scroll */
+#scroll {
+  margin: 0px;
+  padding: 10px;
+  border: none;
+  background-color: #141617;
+}
+
+/* Input */
+#input {
+  margin: 5px 20px;
+  padding: 10px;
+  /*border: 2px solid #d3869b;*/
+  border: none;
+  border-radius: 0.1em;
+  color: #ddc7a1;
+  background-color: #141617;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#input image {
+    border: none;
+    color: #ea6962;
+}
+
+#input * {
+  outline: 4px solid #ea6962;
+}
+
+/* Text */
+#text {
+  margin: 5px;
+  border: none;
+  color: #ddc7a1;
+  animation: fadeIn 0.5s ease-in-out both;
+}
+
+#entry {
+  background-color: #141617;
+}
+
+#entry arrow {
+  border: none;
+  color: #89b482;
+}
+
+/* Selected Entry */
+#entry:selected {
+  border: 0.11em solid #7daea3;
+}
+
+#entry:selected #text {
+  color: #d8a657;
+}
+
+#entry:drop(active) {
+  background-color: #89b482;
+}
