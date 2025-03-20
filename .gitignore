@@ -1,8 +1,12 @@
 # Ignore everything inside this directory
 /qutebrowser/.local/share/qutebrowser/**
 
+# But track these
 !/qutebrowser/.local/share/userscripts/
 !/qutebrowser/.local/share/userscripts/**
+
+# And ignore the qsettings/QtProject.conf
+/qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
 
 # Ignore the btop.log thing
 /btop/.config/btop/btop.log
