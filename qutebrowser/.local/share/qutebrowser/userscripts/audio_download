@@ -33,4 +33,3 @@ yt-dlp -f "bestaudio" \
 
 # Notify when complete
 notify-send -r "$NOTIF_ID" "Download Complete" "Audio saved to $DOWNLOAD_DIR" -h int:value:100
-

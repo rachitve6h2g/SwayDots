@@ -1,5 +1,5 @@
 # For uwsm start
-# exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
+exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -16,10 +16,10 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-# set $term exec uwsm app -T
-set $term kitty
+set $term exec uwsm app -T
+# set $term kitty
 # Your preferred application launcher
-set $menu killall wofi || wofi --show drun --define=drun-print_desktop_file=true
+set $menu killall wofi || uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)
 
 # For networkmanager menu
 set $networkmanager killall nm-connection-editor || exec uwsm app -- nm-connection-editor.desktop
@@ -100,7 +100,7 @@ input "type:touchpad" {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+m exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'loginctl terminate-user ""'
 #
 # Moving around:
 #
@@ -279,7 +279,8 @@ client.background        #1d2021
 
 include $HOME/.config/sway/config.d/*
 
-bindsym $mod+i exec qutebrowser
+# bindsym $mod+i exec qutebrowser
+bindsym $mod+i exec exec uwsm app -- org.qutebrowser.qutebrowser.desktop
 # bindsym $mod+e exec exec uwsm app -- thunar.desktop
 bindsym $mod+Shift+e exec exec uwsm app -- yazi.desktop
 bindsym $mod+Shift+d exec $networmanager
