@@ -30,6 +30,7 @@
 !/systemd/.config/systemd/user/swayidle.service
 !/systemd/.config/systemd/user/swaypolkitagent.service
 !/systemd/.config/systemd/user/thunard.service
+!/systemd/.config/systemd/user/wlsunset.service
 
 # Ignore everything inside the Gruvbox directory
 /icons/.local/share/icons/Gruvbox-Plus-Dark
