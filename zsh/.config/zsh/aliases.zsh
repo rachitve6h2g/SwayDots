@@ -20,6 +20,9 @@ alias l='eza --icons --color'
 alias ls='eza --icons --color'
 alias ll='eza --icons --color -l'
 alias la='eza --icons --color -al'
+alias dir='eza --icons --only-dirs --color'
+alias lgit='eza --icons --color --git -l'
+alias tree='eza --icons --color -T'
 
 # Alias for colored helps 
 # Also see the help function in .zshrc
