@@ -48,7 +48,10 @@ shell-integration = zsh
 shell-integration-features = no-cursor,sudo,no-title
 
 font-family = "IosevkaTerm Nerd Font"
+font-size = 13
 
 app-notifications = true
 
 cursor-style = underline
+
+gtk-gsk-renderer = default
