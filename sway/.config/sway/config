@@ -239,7 +239,7 @@ bindsym $mod+r mode "resize"
     # bindsym Alt+Print exec grimshot --notify save active
 
     # Or use this script from https://github.com/DNDEBUG/wofi-screenshot/tree
-    set $screenshot $HOME/.local/bin/wofi-screenshot.sh
+    set $screenshot killall wofi || $HOME/.local/bin/wofi-screenshot.sh
     bindsym Print exec $screenshot
 
 
