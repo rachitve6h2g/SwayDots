@@ -34,3 +34,8 @@
 
 # Ignore everything inside the Gruvbox directory
 /icons/.local/share/icons/Gruvbox-Plus-Dark
+
+# Ignore everything in cava 
+/cava/.config/cava/**
+# except the config
+!/cava/.config/cava/config
