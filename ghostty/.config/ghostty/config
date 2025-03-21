@@ -45,7 +45,7 @@
 # Set by me
 theme = gruvbox-material-hard-dark
 shell-integration = zsh
-shell-integration-features = no-cursor,sudo,no-title
+shell-integration-features = sudo,no-title
 
 font-family = "IosevkaTerm Nerd Font"
 font-size = 13

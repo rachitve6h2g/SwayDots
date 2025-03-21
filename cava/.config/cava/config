@@ -82,8 +82,8 @@
 ; method = pulse
 ; source = auto
 
-; method = pipewire
-; source = auto
+method = pipewire
+source = auto
 
 ; method = alsa
 ; source = hw:Loopback,1
@@ -240,6 +240,20 @@
 ; gradient_color_6 = '#cc8033'
 ; gradient_color_7 = '#cc5933'
 ; gradient_color_8 = '#cc3333'
+
+# The catppuccin theme
+background = '#141617'
+
+gradient = 1
+
+gradient_color_1 = '#a9b655'
+gradient_color_2 = '#89b482'
+gradient_color_3 = '#7daea3'
+gradient_color_4 = '#d3869b'
+gradient_color_5 = '#d8a657'
+gradient_color_6 = '#e78a4e'
+gradient_color_7 = '#ea6962'
+
 
 
 

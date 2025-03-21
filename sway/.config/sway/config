@@ -293,6 +293,10 @@ bindsym $mod+i exec exec uwsm app -- org.qutebrowser.qutebrowser.desktop
 bindsym $mod+Shift+e exec exec uwsm app -- yazi.desktop
 bindsym $mod+Shift+d exec $networmanager
 
+# Power menu using wofi
+set $powermenu $HOME/.local/bin/wofi-power-menu.sh
+bindsym $mod+x exec $powermenu
+
 # Window rules from Gentoo wiki on sway
 # for_window [window_role = "pop-up"] floating enable
 # for_window [window_role = "bubble"] floating enable
