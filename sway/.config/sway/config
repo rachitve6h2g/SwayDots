@@ -21,8 +21,8 @@ set $term exec uwsm app -T
 # Your preferred application launcher
 set $menu killall wofi || uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)
 
-# For networkmanager menu
-set $networkmanager killall nm-connection-editor || exec uwsm app -- nm-connection-editor.desktop
+# For window swiching
+set $windowswitch killall wofi || $HOME/.local/bin/windows.py
 
 set $clipboard killall wofi || exec cliphist list | wofi -S dmenu | cliphist decode | wl-copy
 # Gtk theming and stuff here
@@ -146,6 +146,9 @@ input "type:touchpad" {
     # Toggle it a bit
     bindsym $mod+tab workspace next
 
+    # Switch window with the wofi window switcher
+    bindsym $mod+Shift+tab exec $windowswitch
+
     # Shuffle through workspaces which are not existing
     set $num_of_workspaces 10
     bindsym $mod+o exec swaymsg -pt get_workspaces | gawk -f ~/.config/sway/workspace.gawk -v move_type="left"  -v num_of_workspaces=$num_of_workspaces
@@ -229,10 +232,15 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioPause exec playerctl play-pause
     bindsym --locked XF86AudioPlay exec playerctl play-pause
     bindsym --locked XF86AudioPrev exec playerctl previous
+
     # Special key to take a screenshot with grim
-    bindsym Print exec grimshot --notify save output
-    bindsym Shift+Print exec grimshot --notify save area
-    bindsym Alt+Print exec grimshot --notify save active
+    # bindsym Print exec grimshot --notify save output
+    # bindsym Shift+Print exec grimshot --notify save area
+    # bindsym Alt+Print exec grimshot --notify save active
+
+    # Or use this script from https://github.com/DNDEBUG/wofi-screenshot/tree
+    set $screenshot $HOME/.local/bin/wofi-screenshot.sh
+    bindsym Print exec $screenshot
 
 
 

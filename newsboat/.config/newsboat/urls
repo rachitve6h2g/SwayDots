@@ -1,0 +1,35 @@
+"query:Subscriptions:tags # \"timeline\""
+https://www.gentoo.org/feeds/news.xml "~Gentoo News" timeline
+https://planet.gentoo.org/rss20.xml timeline
+https://archlinux.org/feeds/news/ "~Archlinux News" timeline
+
+# General Tech News
+https://feeds.arstechnica.com/arstechnica/index "Tech"
+https://www.wired.com/feed/rss "Tech"
+https://techcrunch.com/feed/ "Tech"
+
+# Developer & Programming
+https://news.ycombinator.com/rss "Programming"
+https://www.reddit.com/r/programming/.rss "Programming"
+https://dev.to/feed "Programming"
+
+# Cybersecurity & Privacy
+https://krebsonsecurity.com/feed/ "Cybersecurity"
+https://www.bleepingcomputer.com/feed/ "Cybersecurity"
+https://feeds.feedburner.com/TheHackersNews "Cybersecurity"
+
+# Open Source & Linux
+https://www.phoronix.com/rss.php "Linux"
+https://www.omgubuntu.co.uk/feed "Linux"
+https://www.linuxjournal.com/node/feed "Linux"
+
+# AI & Machine Learning
+https://openai.com/research/feed/ "AI"
+https://ai.googleblog.com/feeds/posts/default "AI"
+https://www.deepmind.com/blog/rss.xml "AI"
+
+# Gadgets & Consumer Tech
+https://9to5mac.com/feed/ "Gadgets"
+https://www.androidpolice.com/feed/ "Gadgets"
+https://www.macrumors.com/macrumors.xml "Gadgets"
+
