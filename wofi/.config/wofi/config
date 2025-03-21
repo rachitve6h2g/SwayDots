@@ -1,3 +1,4 @@
 allow_images=true
 width=30%
 insensitive=true
+normal_window=true
