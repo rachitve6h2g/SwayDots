@@ -29,6 +29,16 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 # source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# For history keeping
+export HISTSIZE=2000
+export HISTFILE="$ZDOTDIR/.history"
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
+setopt correctall
+setopt hist_ignore_space
+setopt autocd
+setopt extendedglob
+
 # For gentoo
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 
