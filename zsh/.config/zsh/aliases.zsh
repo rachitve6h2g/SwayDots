@@ -25,6 +25,9 @@ alias lgit='eza --icons --color --git -l'
 alias lgt='eza --icons --color --git -T -l -a --level 2'
 alias tree='eza --icons --color -T'
 
+# To source .zshrc
+alias sozsh='source $ZDOTDIR/.zshrc'
+
 # Alias for colored helps 
 # Also see the help function in .zshrc
 # The aliases have been set keeping in mind 
