@@ -203,6 +203,10 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Press jj in insert mode to go into normal mode
 vim.keymap.set("i", "jj", "<Esc>")
 
+-- Center the cursor vertically when moving to the next word during a search
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

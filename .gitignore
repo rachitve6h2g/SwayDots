@@ -19,6 +19,7 @@
 
 # Ignore the .zcompdump
 /zsh/.config/zsh/.zcompdump
+/zsh/.config/zsh/.history
 
 # Ignore every target.wants symlink in the systemd user directory
 /systemd/.config/systemd/user/**

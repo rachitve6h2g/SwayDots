@@ -25,7 +25,18 @@
         {
             "before": ["<Esc>"],
             "after": [":nohlsearch"]
+        },
+
+        {
+            "before": ["n"],
+            "after": ["nzz"]
+        },
+
+        {
+            "before": ["N"],
+            "after": ["Nzz"]
         }
+
     ],
     "redhat.telemetry.enabled": true
 }
