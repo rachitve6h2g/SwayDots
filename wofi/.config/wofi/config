@@ -1,4 +1,8 @@
 allow_images=true
 width=30%
 insensitive=true
-normal_window=true
+
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_expand=Ctrl-l
+key_hide_search=Ctrl-KP_Space

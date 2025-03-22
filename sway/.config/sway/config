@@ -295,19 +295,12 @@ bindsym $mod+Shift+d exec $networmanager
 
 # Power menu using wofi
 set $powermenu $HOME/.local/bin/wofi-power-menu.sh
-bindsym $mod+x exec $powermenu
+bindsym $mod+x exec killall wofi || $powermenu
 
 # Window rules from Gentoo wiki on sway
-# for_window [window_role = "pop-up"] floating enable
-# for_window [window_role = "bubble"] floating enable
-# for_window [window_role = "dialog"] floating enable
-# for_window [window_type = "dialog"] floating enable
-# for_window [window_role = "task_dialog"] floating enable
-# for_window [window_type = "menu"] floating enable
-# for_window [app_id = "floating"] floating enable
-# for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
-# for_window [class = "(?i)pinentry"] floating enable
-# for_window [title = "Administrator privileges required"] floating enable
+for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [title = "Administrator privileges required"] floating enable
 # 
 # for_window [title = "About Mozilla Firefox"] floating enable
 # for_window [window_role = "About"] floating enable
@@ -318,14 +311,14 @@ bindsym $mod+x exec $powermenu
 # 
 # for_window [class="VirtualBoxVM" title="Create Virtual Machine"] floating enable, border normal
 # for_window [class="VirtualBoxVM" title="Archlinux-Soft Keyboard"] floating enable, border normal
-# for_window [app_id="thunar" title="File Operation Progress"] floating enable, border normal
-# for_window [app_id="thunar" title="%Thunar%"] floating enable
+for_window [app_id="thunar" title="File Operation Progress"] floating enable, border normal
+for_window [app_id="thunar" title="%Thunar%"] floating enable
 # 
 # for_window [app_id="nm-connection-editor"] floating enable, border normal, resize set width 600 height 400
-# for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, border normal, resize set width 820 height 640
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, border normal, resize set width 820 height 640
 # 
-# for_window [title="Open Folder"] floating enable, border normal, resize set width 893 height 575
+for_window [title="Open Folder"] floating enable, border normal, resize set width 893 height 575
 # 
-# for_window [app_id="org.pwmt.zathura"] inhibit_idle visible
+for_window [app_id="org.pwmt.zathura"] inhibit_idle visible
 # 
-# for_window [app_id="mpv"] inhibit_idle visible
+for_window [app_id="mpv"] inhibit_idle visible
