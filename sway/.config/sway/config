@@ -290,7 +290,7 @@ include $HOME/.config/sway/config.d/*
 # bindsym $mod+i exec qutebrowser
 bindsym $mod+i exec exec uwsm app -- org.qutebrowser.qutebrowser.desktop
 # bindsym $mod+e exec exec uwsm app -- thunar.desktop
-bindsym $mod+Shift+e exec exec uwsm app -- yazi.desktop
+bindsym $mod+y exec exec uwsm app -- yazi.desktop
 bindsym $mod+Shift+d exec $networmanager
 
 # Power menu using wofi
