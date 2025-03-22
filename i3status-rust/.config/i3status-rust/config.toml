@@ -57,9 +57,16 @@ cmd = "pavucontrol"
 
 [[block]]
 block = "battery"
+driver = "upower"
+device = "DisplayDevice"
 interval = 1
 full_format = " $icon $percentage "
 format = " $icon $percentage {$time_remaining.dur(hms:true, min_unit:m) |}"
+full_threshold = 80
+empty_threshold = 20
+good = 70
+warning = 40
+critical = 30
 
 [[block]]
 block = "time"
