@@ -242,7 +242,7 @@ source = auto
 ; gradient_color_8 = '#cc3333'
 
 # The catppuccin theme
-background = '#141617'
+background = '#1d2021'
 
 gradient = 1
 
