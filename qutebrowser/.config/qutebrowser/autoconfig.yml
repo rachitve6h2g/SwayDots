@@ -19,6 +19,7 @@ settings:
     https://learn.younity.in: false
     https://web.telegram.org: false
     https://web.whatsapp.com: true
+    https://www.facebook.com: false
     https://www.pw.live: true
     https://www.youtube.com: false
   content.register_protocol_handler:

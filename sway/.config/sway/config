@@ -307,7 +307,6 @@ for_window [title = "Administrator privileges required"] floating enable
 # for_window [app_id="firefox" title="Library"] floating enable, border normal, sticky enable
 # for_window [app_id="org.nickvision.tubeconverter" title="Parabolic"] floating enable, border normal
 # for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, border normal, sticky enable, resize set width 50px height 50px
-for_window [app_id="uget-gtk"] floating enable, border normal
 # 
 # for_window [class="VirtualBoxVM" title="Create Virtual Machine"] floating enable, border normal
 # for_window [class="VirtualBoxVM" title="Archlinux-Soft Keyboard"] floating enable, border normal
