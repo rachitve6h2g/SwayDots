@@ -21,9 +21,11 @@ alias ls='eza --icons --color'
 alias ll='eza --icons --color -l'
 alias la='eza --icons --color -al'
 alias dir='eza --icons --only-dirs --color'
-alias lgit='eza --icons --color --git -l'
+alias lg='eza --icons --color --git -l'
 alias lgt='eza --icons --color --git -T -l -a --level 2'
 alias tree='eza --icons --color -T'
+# Jump to the git source directory
+alias cdg='cd $(git rev-parse --show-toplevel)'
 
 # To source .zshrc
 alias sozsh='source $ZDOTDIR/.zshrc'
