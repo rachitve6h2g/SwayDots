@@ -38,5 +38,6 @@ config.bind('ya', 'spawn --userscript audio_download')
 # Download video
 config.bind('yv', 'spawn --userscript video_download')
 
-
+# Get some linux search engines
 c.url.searchengines['gw'] = 'https://wiki.gentoo.org/index.php?search={}'
+c.url.searchengines['mynixos'] = 'https://mynixos.com/search?q={}'
