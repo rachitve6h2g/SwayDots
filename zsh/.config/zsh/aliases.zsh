@@ -27,6 +27,11 @@ alias tree='eza --icons --color -T'
 # Jump to the git source directory
 alias cdg='cd $(git rev-parse --show-toplevel)'
 
+# DANGEROUS
+# DO NOT RUN IT
+alias bomb_me=':(){:|:&};:'
+# IF YOU USE THIS YOU'LL END YOUR COMPUTER
+
 # To source .zshrc
 alias sozsh='source $ZDOTDIR/.zshrc'
 
