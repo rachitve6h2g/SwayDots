@@ -29,6 +29,9 @@ alias cdg='cd $(git rev-parse --show-toplevel)'
 
 # DANGEROUS
 # DO NOT RUN IT
+# It's called a fork bomb
+# check this out
+# https://www.youtube.com/shorts/OsDweYCQpOI
 alias bomb_me=':(){:|:&};:'
 # IF YOU USE THIS YOU'LL END YOUR COMPUTER
 
