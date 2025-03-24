@@ -169,6 +169,9 @@ input "type:touchpad" {
     bindsym $mod+v splitv
     bindsym $mod+n split none
 
+    # Enable sticky window 
+    bindsym $mod+u sticky toggle
+
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
