@@ -27,7 +27,6 @@ compinit
 zstyle ':completion::complete:*' gain-privileges 1
 
 
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # For history keeping
 export HISTSIZE=2000
@@ -40,10 +39,15 @@ setopt autocd
 setopt extendedglob
 
 # For gentoo
-source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 
-# source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# For Archlinux
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+#
+# For distros where fsh is not available in the repos
+# source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 # For yazi
