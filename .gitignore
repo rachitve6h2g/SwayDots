@@ -40,3 +40,14 @@
 /cava/.config/cava/**
 # except the config
 !/cava/.config/cava/config
+
+# Ignore everythin inside sway systemd
+/sway/.config/systemd/user/**
+# Except the services and timers inside there
+!/sway/.config/systemd/user/swayidle.service
+!/sway/.config/systemd/user/swaypolkitagent.service
+!/sway/.config/systemd/user/wlsunset.service
+
+# Ignore the lazy-lock.json in NeoVim 
+# For better upgrade and stuff
+/nvim/.config/nvim/lazy-lock.json

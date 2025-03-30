@@ -99,6 +99,15 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
+# For rehash 
+# see https://wiki.archlinux.org/title/Zsh #4.5.2 Alternative on-demand rehash SIGSUR1
+TRAPUSR1() { rehash }
+
+# The "command not found handler" 
+# See the archwiki
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# The Amazing history option
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search

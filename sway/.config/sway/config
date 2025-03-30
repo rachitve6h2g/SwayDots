@@ -1,5 +1,6 @@
 # For uwsm start
 exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
+exec i3-battery-popup -n -m 'Battery Low!!'
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -227,8 +228,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume \@DEFAULT_AUDIO_SINK@ 5%+ -l 1
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     # Special keys to adjust brightness via brightnessctl
-    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 3%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 3%+
 
     # For player keys
     bindsym --locked XF86AudioNext exec playerctl next
@@ -251,27 +252,27 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    font pango:IosevkaTerma Nerd Font 9
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command i3status-rs
-
-    colors {
-	background         #1d2021
-	statusline         #ddc7a1
-    	focused_statusline #ddc7a1
-    	focused_separator  #1d2021
-
-    	focused_workspace  #1d2021  #d8a657    #141617
-    	active_workspace   #1d2021  #504945 #ddc7a1
-    	inactive_workspace #1d2021  #1d2021     #ddc7a1
-    	urgent_workspace   #1d2021  #ea6962      #141617
-    }
-}
+# bar {
+#     position top
+#
+#     font pango:IosevkaTerm Nerd Font 9
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command i3status-rs
+#
+#     colors {
+# 	background         #1d2021
+# 	statusline         #ddc7a1
+#     	focused_statusline #ddc7a1
+#     	focused_separator  #1d2021
+#
+#     	focused_workspace  #1d2021  #d8a657    #141617
+#     	active_workspace   #1d2021  #504945 #ddc7a1
+#     	inactive_workspace #1d2021  #1d2021     #ddc7a1
+#     	urgent_workspace   #1d2021  #ea6962      #141617
+#     }
+# }
 
 # The looks matter
 default_border pixel 2
@@ -301,7 +302,7 @@ set $powermenu $HOME/.local/bin/wofi-power-menu.sh
 bindsym $mod+x exec killall wofi || $powermenu
 
 # Window rules from Gentoo wiki on sway
-for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating"] floating enable, border pixel 1
 for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
 for_window [title = "Administrator privileges required"] floating enable
 # 
@@ -315,6 +316,9 @@ for_window [title = "Administrator privileges required"] floating enable
 # for_window [class="VirtualBoxVM" title="Archlinux-Soft Keyboard"] floating enable, border normal
 for_window [app_id="thunar" title="File Operation Progress"] floating enable, border normal
 for_window [app_id="thunar" title="%Thunar%"] floating enable
+
+# For YouTube in qutebrowser
+for_window [app_id="org.qutebrowser.qutebrowser" title="%YouTube%"] inhibit_idle visible
 # 
 # for_window [app_id="nm-connection-editor"] floating enable, border normal, resize set width 600 height 400
 for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, border normal, resize set width 820 height 640
