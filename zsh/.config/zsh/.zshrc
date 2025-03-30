@@ -17,11 +17,6 @@ export ZSH_CUSTOM=$XDG_CONFIG_HOME/zsh
 export LESS='-R --use-color -Dd+r$Du+b$'
 export MANPAGER='nvim +Man!'
 
-# For TASKWARRIOR stuff
-export TASKDATA=$XDG_DATA_HOME/task
-# And for app-misc/vit
-export VIT_DIR=$XDG_CONFIG_HOME/vit
-
 autoload -Uz compinit
 compinit
 zstyle ':completion::complete:*' gain-privileges 1
@@ -40,14 +35,10 @@ setopt extendedglob
 
 # For gentoo
 # source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
-
-# For Archlinux
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 #
 # For distros where fsh is not available in the repos
 # source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 # For yazi
@@ -82,30 +73,6 @@ function yt-download() {
     esac
 }
 
-# For the zsh pacman hook
-zshcache_time="$(date +%s%N)"
-
-autoload -Uz add-zsh-hook
-
-rehash_precmd() {
-  if [[ -a /var/cache/zsh/pacman ]]; then
-    local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
-    if (( zshcache_time < paccache_time )); then
-      rehash
-      zshcache_time="$paccache_time"
-    fi
-  fi
-}
-
-add-zsh-hook -Uz precmd rehash_precmd
-
-# For rehash 
-# see https://wiki.archlinux.org/title/Zsh #4.5.2 Alternative on-demand rehash SIGSUR1
-TRAPUSR1() { rehash }
-
-# The "command not found handler" 
-# See the archwiki
-source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # The Amazing history option
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -114,6 +81,9 @@ zle -N down-line-or-beginning-search
 
 [[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+
+# Source this if you are on Archlinux
+source $ZDOTDIR/arch_zsh.zsh
 
 # This should be at the end of the .zshrc file
 eval "$(starship init zsh)"
