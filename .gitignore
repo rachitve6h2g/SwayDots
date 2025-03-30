@@ -33,9 +33,6 @@
 !/systemd/.config/systemd/user/thunard.service
 !/systemd/.config/systemd/user/wlsunset.service
 
-# Ignore everything inside the Gruvbox directory
-/icons/.local/share/icons/Gruvbox-Plus-Dark
-
 # Ignore everything in cava 
 /cava/.config/cava/**
 # except the config
@@ -47,6 +44,12 @@
 !/sway/.config/systemd/user/swayidle.service
 !/sway/.config/systemd/user/swaypolkitagent.service
 !/sway/.config/systemd/user/wlsunset.service
+
+# Also ignore everything inside the sway local directory
+/sway/.local/**
+# Except the bin directory
+!/sway/.local/bin/
+!/sway/.local/bin/**
 
 # Ignore the lazy-lock.json in NeoVim 
 # For better upgrade and stuff
