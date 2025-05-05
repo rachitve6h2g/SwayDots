@@ -13,6 +13,7 @@
 
 # And ignore the qsettings/QtProject.conf
 /qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
+/qutebrowser/.config/qutebrowser/__pycache__/
 
 # Ignore the btop.log thing
 /btop/.config/btop/btop.log
