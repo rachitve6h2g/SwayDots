@@ -11,7 +11,7 @@
 -> When stowing into the $XDG_CONFIG_HOME/systemd/user/ directory always stow those first and then enable any user services
     otherwise conflicting files and broken symlinks will occur to the .dotfiles directory
 
-#Things to add to the setup#
+### Things to add to the setup
 
 - [ ] Add fzf tab completions for 
 - [ ] get neovim configuration with LazyVim
