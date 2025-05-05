@@ -12,7 +12,7 @@ settings:
         <Ctrl+/>: hint links spawn --detach mpv {hint-url}
         ya: spawn --userscript audio_download
   colors.webpage.preferred_color_scheme:
-    global: dark
+    global: auto
   content.blocking.method:
     global: both
   content.notifications.enabled:
@@ -35,7 +35,7 @@ settings:
     - normal {line}G{column0}l
   fileselect.folder.command:
     global:
-    - kitty
+    - foot
     - -e
     - yazi
     - --choosedir={}

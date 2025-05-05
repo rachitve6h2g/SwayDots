@@ -1,6 +1,6 @@
 # Sway configuration
 alias swaycon='vim $HOME/.config/sway'
-alias gocon='cd $HOME/.config'
+alias gocon='cd $HOME/.dotfiles'
 # Important aliases
 alias vim="nvim"
 alias vi="nvim"

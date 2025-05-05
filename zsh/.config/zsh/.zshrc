@@ -1,7 +1,7 @@
 source $ZDOTDIR/aliases.zsh
 source /usr/share/fzf/key-bindings.zsh
-# source $ZDOTDIR/fzf_catppuccin.zsh
-source $ZDOTDIR/fzf_gruvbox_material.zsh
+source $ZDOTDIR/fzf_catppuccin.zsh
+# source $ZDOTDIR/fzf_gruvbox_material.zsh
 # For the vim keybindings in zsh set the editor variable
 export EDITOR='nvim'
 
@@ -34,10 +34,10 @@ setopt autocd
 setopt extendedglob
 
 # For gentoo
-# source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+source $ZDOTDIR/fsh/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/site-functions/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 #
-# For distros where fsh is not available in the repos
-# source $ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
@@ -83,7 +83,7 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 # Source this if you are on Archlinux
-source $ZDOTDIR/arch_zsh.zsh
+# source $ZDOTDIR/arch_zsh.zsh
 
 # This should be at the end of the .zshrc file
 eval "$(starship init zsh)"

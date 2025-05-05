@@ -1,6 +1,7 @@
 # For uwsm start
+include themes/catppuccin-mocha
 exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
-exec i3-battery-popup -n -m 'Battery Low!!'
+#exec i3-battery-popup -n -m 'Battery Low!!'
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -42,17 +43,17 @@ exec_always {
 }
 seat seat0 xcursor_theme Bibata-Modern-Classic 24
 
-exec gentoo-pipewire-launcher restart &
+#exec gentoo-pipewire-launcher restart &
 
 # Play the startup sound
 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 80%
 exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
 
-exec swayidle -C ~/.config/sway/swayidle
+#exec swayidle -C ~/.config/sway/swayidle
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/.local/share/backgrounds/sway/platform.jpg fill
+output * bg $HOME/.local/share/backgrounds/1347701.png fill
 
 # Or set a random wallpaper
 # set $wallpapers_path $HOME/.local/share/backgrounds/sway
@@ -247,33 +248,6 @@ bindsym $mod+r mode "resize"
     bindsym Print exec $screenshot
 
 
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-#
-#     font pango:IosevkaTerm Nerd Font 9
-#
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command i3status-rs
-#
-#     colors {
-# 	background         #1d2021
-# 	statusline         #ddc7a1
-#     	focused_statusline #ddc7a1
-#     	focused_separator  #1d2021
-#
-#     	focused_workspace  #1d2021  #d8a657    #141617
-#     	active_workspace   #1d2021  #504945 #ddc7a1
-#     	inactive_workspace #1d2021  #1d2021     #ddc7a1
-#     	urgent_workspace   #1d2021  #ea6962      #141617
-#     }
-# }
-
 # The looks matter
 default_border pixel 2
 gaps inner 5
@@ -281,13 +255,12 @@ gaps outer 2
 
 # Make it more appealing 
 # target                 title       bg    text   indicator  border
-client.focused           #ddc7a1   #1d2021 #ddc7a1 #7daea3 #d8a657
-client.focused_inactive  #282828 #1d2021 #ddc7a1  #7daea3 #282828
-client.unfocused         #282828 #1d2021 #ddc7a1  #7daea3 #282828
-client.urgent            #ea6962    #1d2021 #ea6962   #282828  #ea6962
-client.placeholder       #282828 #1d2021 #ddc7a1  #282828  #282828
-client.background        #1d2021
-
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 include $HOME/.config/sway/config.d/*
 
