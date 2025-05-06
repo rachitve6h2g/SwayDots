@@ -32,3 +32,4 @@
 - [ ] Use mirrorselect for selecting good mirrors
 - [ ] Write a event for pausing Song/Video on unplugging earphones and playing them when plugged back in
 - [ ] configure cmus and cava
+- [ ] Just use Oh-My-Zsh and remove all the other useless stuff
