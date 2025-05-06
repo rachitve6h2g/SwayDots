@@ -49,7 +49,9 @@ seat seat0 xcursor_theme Bibata-Modern-Classic 24
 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 80%
 exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
 
-#exec swayidle -C ~/.config/sway/swayidle
+# If using this in a non-systemd distro
+#exec swayidle -C ~/.config/swayidle/config
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)

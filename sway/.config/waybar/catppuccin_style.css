@@ -1,7 +1,7 @@
 @import "mocha.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: IosevkaTermNerdFont;
+    font-family: ComicShannsMonoNerdFont;
     font-size: 13px;
     color: @text;
 }

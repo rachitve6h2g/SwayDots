@@ -1,6 +1,4 @@
 source $ZDOTDIR/aliases.zsh
-source /usr/share/fzf/key-bindings.zsh
-source $ZDOTDIR/fzf_catppuccin.zsh
 # source $ZDOTDIR/fzf_gruvbox_material.zsh
 # For the vim keybindings in zsh set the editor variable
 export EDITOR='nvim'
@@ -17,9 +15,12 @@ export ZSH_CUSTOM=$XDG_CONFIG_HOME/zsh
 export LESS='-R --use-color -Dd+r$Du+b$'
 export MANPAGER='nvim +Man!'
 
+# use-cache option taken from https://wiki.gentoo.org/wiki/Zsh#Add-ons
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion::complete:*' use-cache 1 gain-privileges 1
 autoload -Uz compinit
 compinit
-zstyle ':completion::complete:*' gain-privileges 1
 
 
 
@@ -28,15 +29,20 @@ export HISTSIZE=2000
 export HISTFILE="$ZDOTDIR/.history"
 export SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
-setopt correctall
-setopt hist_ignore_space
-setopt autocd
-setopt extendedglob
+setopt appendhistory correctall hist_ignore_space autocd extendedglob notify nomatch globdots
 
 # For gentoo
+#
+# For zsh-autocomplete the sourcing and keybindings have an order
+# Refer https://github.com/zsh-users/zsh-syntax-highlighting/issues/951
 source $ZDOTDIR/fsh/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/site-functions/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+#source /usr/share/zsh/site-functions/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# bindkey -M menuselect '^I' menu-select
+# bindkey -M menuselect "$terminfo[kcbt]" menu-select
+
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
+source /usr/share/fzf/key-bindings.zsh
+source $ZDOTDIR/fzf_catppuccin.zsh
 #
 
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
