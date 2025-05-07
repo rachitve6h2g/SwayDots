@@ -34,3 +34,5 @@
 - [ ] configure cmus and cava
 - [ ] Just use Oh-My-Zsh and remove all the other useless stuff
 - [ ] Setup wlsunset
+- [ ] Get Upower settings fixed (raise the lower battery limit and lower the upper battery limit)
+- [ ] Add cpu module on the right and cava module on the left of waybar

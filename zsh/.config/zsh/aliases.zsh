@@ -45,6 +45,10 @@ alias sozsh='source $ZDOTDIR/.zshrc'
 # the oh-my-zsh issue about diagnostics.zsh
 alias -g -- :B='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- :b='--help 2>&1 | bat --language=help --style=plain'
+alias bathelp='bat --plain --language=help'
+help() {
+  "$@" --help 2>&1 | bathelp
+}
 
 # alias for editing .zshrc files directly
 alias -g -- ba="vim ~/.config/zsh/"
