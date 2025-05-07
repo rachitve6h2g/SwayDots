@@ -1,5 +1,13 @@
+# This should be at the end of the .zshrc file
+eval "$(starship init zsh)"
+
+# For zoxide 
+export _ZO_ECHO='1'
+eval "$(zoxide init zsh --cmd cd)"
+
+# source aliases here
 source $ZDOTDIR/aliases.zsh
-# source $ZDOTDIR/fzf_gruvbox_material.zsh
+
 # For the vim keybindings in zsh set the editor variable
 export EDITOR='nvim'
 
@@ -16,9 +24,12 @@ export LESS='-R --use-color -Dd+r$Du+b$'
 export MANPAGER='nvim +Man!'
 
 # use-cache option taken from https://wiki.gentoo.org/wiki/Zsh#Add-ons
+zstyle ':completion:*' menu select
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-zstyle ':completion::complete:*' use-cache 1 gain-privileges 1
+zstyle ':completion::complete:*' use-cache 1 
+zstyle ':completion::complete:*' gain-privileges 1 
+
 autoload -Uz compinit
 compinit
 
@@ -33,52 +44,19 @@ setopt appendhistory correctall hist_ignore_space autocd extendedglob notify nom
 
 # For gentoo
 #
-# For zsh-autocomplete the sourcing and keybindings have an order
 # Refer https://github.com/zsh-users/zsh-syntax-highlighting/issues/951
 source $ZDOTDIR/fsh/fast-syntax-highlighting.plugin.zsh
-#source /usr/share/zsh/site-functions/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# bindkey -M menuselect '^I' menu-select
-# bindkey -M menuselect "$terminfo[kcbt]" menu-select
 
 source /usr/share/zsh/site-functions/zsh-autosuggestions.zsh
 source /usr/share/fzf/key-bindings.zsh
 source $ZDOTDIR/fzf_catppuccin.zsh
+# source $ZDOTDIR/fzf_gruvbox_material.zsh
 #
 
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 
 # For yazi
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-# For yt-dlp
-function yt-download() {
-    case "$1" in
-        -v)
-            yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 \
-                   --external-downloader aria2c \
-                   --external-downloader-args "-c --conf-path=${HOME}/aria2c.conf" \
-                   -o "${HOME}/Videos/yt-dlp/%(title)s.%(ext)s" "$2"
-            ;;
-        -a)
-            yt-dlp -f bestaudio --extract-audio --audio-format mp3 \
-                   --audio-quality 0 \
-                   --external-downloader aria2c \
-                   --external-downloader-args "-c --conf-path=${HOME}/aria2c.conf" \
-                   -o "${HOME}/Music/%(title)s.%(ext)s" "$2"
-            ;;
-        *)
-            echo "Usage: yt-download -v <video-url> or yt-download -a <audio-url>"
-            ;;
-    esac
-}
-
+source $ZDOTDIR/yazi.zsh
 
 # The Amazing history option
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
@@ -90,10 +68,3 @@ zle -N down-line-or-beginning-search
 
 # Source this if you are on Archlinux
 # source $ZDOTDIR/arch_zsh.zsh
-
-# This should be at the end of the .zshrc file
-eval "$(starship init zsh)"
-
-# For zoxide 
-export _ZO_ECHO='1'
-eval "$(zoxide init zsh --cmd cd)"

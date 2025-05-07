@@ -16,6 +16,7 @@ alias ip='ip -color=auto'
 alias kitcat="kitten icat"
 
 # Get eza working
+# Can be managed by oh-my-zsh
 alias l='eza --icons --color'
 alias ls='eza --icons --color'
 alias ll='eza --icons --color -l'
