@@ -35,4 +35,5 @@
 - [ ] Get Upower settings fixed (raise the lower battery limit and lower the upper battery limit)
 - [ ] Add cpu module on the right and cava module on the left of waybar
 - [ ] Reduce journal size 
-- [ ] Rduce swappiness
+- [ ] Reduce swappiness
+- [ ] Setup VSCodium for Coding (theme and all)
