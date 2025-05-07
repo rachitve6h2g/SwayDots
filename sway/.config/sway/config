@@ -55,7 +55,7 @@ exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/.local/share/backgrounds/1347701.png fill
+output * bg $HOME/.local/share/backgrounds/evening-sky.png fill
 
 # Or set a random wallpaper
 # set $wallpapers_path $HOME/.local/share/backgrounds/sway
