@@ -14,6 +14,9 @@ export EDITOR='nvim'
 # Enable kitty with wayland
 export KITTY_ENABLE_WAYLAND=1
 
+# Export the Gtk Theme 
+export GTK_THEME='Catppuccin-Purple-Dark'
+
 # Set some variables here
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache

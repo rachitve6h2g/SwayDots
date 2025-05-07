@@ -13,10 +13,9 @@
 
 ### Things to add to the setup
 
-- [ ] Add fzf tab completions for 
-- [ ] Use kitty as application launcher using fzf
+- [X] Add fzf tab completions for zsh
 - [X] get neovim configuration with LazyVim
-- [ ] configure fzf for more power
+- [X] configure fzf for more power
 - [ ] add settings from the config.bak to the main config files
 - [ ] clean up the dotfiles a little
 - [X] get catppuccin themed waybar
@@ -32,7 +31,8 @@
 - [ ] Use mirrorselect for selecting good mirrors
 - [ ] Write a event for pausing Song/Video on unplugging earphones and playing them when plugged back in
 - [ ] configure cmus and cava
-- [ ] Just use Oh-My-Zsh and remove all the other useless stuff
 - [ ] Setup wlsunset
 - [ ] Get Upower settings fixed (raise the lower battery limit and lower the upper battery limit)
 - [ ] Add cpu module on the right and cava module on the left of waybar
+- [ ] Reduce journal size 
+- [ ] Rduce swappiness

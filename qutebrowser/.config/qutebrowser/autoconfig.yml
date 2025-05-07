@@ -51,3 +51,5 @@ settings:
       gw: https://wiki.gentoo.org/index.php?search={}
       wa: https://wiki.archlinux.org/?search={}
       yt: https://www.youtube.com/results?search_query={}
+  window.transparent:
+    global: true

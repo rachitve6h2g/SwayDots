@@ -8,5 +8,3 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export XCURSOR_THEME=Bibata-Modern-Classic
 
 export ELECTRON_OZONE_PLATFORM_HINT='wayland'
-
-export GTK_THEME='Gruvbox-Yellow-Dark'
