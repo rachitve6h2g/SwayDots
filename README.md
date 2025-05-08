@@ -37,3 +37,5 @@
 - [ ] Reduce journal size 
 - [ ] Reduce swappiness
 - [ ] Setup VSCodium for Coding (theme and all)
+- [ ] Make systemd timer to regularly clear cache files of 'Qutebrowser and other stuff'
+

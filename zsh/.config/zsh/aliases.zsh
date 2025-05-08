@@ -58,3 +58,8 @@ alias nvsql="nvim '+SQLua'"
 
 # For cd'ing back
 alias '..'="cd .."
+
+# Refer https://github.com/andreafrancia/trash-cli#but-sometimes-i-forget-to-use-trash-put-really-cant-i
+# For using trash-cli instead of 'rm'
+alias rm='echo "This is not the command you are looking for (use trash-cli)"; false'
+alias mv='mv -iv'
