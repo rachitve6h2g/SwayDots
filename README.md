@@ -38,4 +38,5 @@
 - [ ] Reduce swappiness
 - [ ] Setup VSCodium for Coding (theme and all)
 - [ ] Make systemd timer to regularly clear cache files of 'Qutebrowser and other stuff'
-
+- [ ] setup etckeeper (or search how to keep files in /etc in Gentoo under track)
+- [ ] Get /etc/portage pushed to git as well (make the portage directory as a git directory).
