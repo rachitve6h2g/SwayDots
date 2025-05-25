@@ -40,3 +40,5 @@
 - [ ] Make systemd timer to regularly clear cache files of 'Qutebrowser and other stuff'
 - [ ] setup etckeeper (or search how to keep files in /etc in Gentoo under track)
 - [ ] Get /etc/portage pushed to git as well (make the portage directory as a git directory).
+- [ ] Learn more about dispatch-conf, etc-update and cfg-update commands in Gentoo
+- [ ] Shift zsh to zinit plugin for working in any distro
