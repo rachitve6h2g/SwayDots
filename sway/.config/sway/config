@@ -1,5 +1,5 @@
 # For uwsm start
-include themes/catppuccin-mocha
+include ~/.local/share/sway/themes/rose-pine
 exec exec uwsm finalize FINALIZED=SWAYSOCK I3SOCK XCURSOR_THEME XCURSOR_SIZE
 #exec i3-battery-popup -n -m 'Battery Low!!'
 # Default config for sway
@@ -32,22 +32,18 @@ set $gnome-schema org.gnome.desktop.interface
 set $gnome-wm org.gnome.desktop.wm.preferences
 set $gnome-sound org.gnome.desktop.sound
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Gruvbox-Yellow-Dark'
-	gsettings set $gnome-schema icon-theme 'Gruvbox-Plus-Dark'
-	gsettings set $gnome-schema cursor-theme 'Bibata-Modern-Classic'
-	gsettings set $gnome-schema font-name 'IosevkaTermNerdFont 10'
+	gsettings set $gnome-schema font-name 'monospace 10'
 	gsettings set $gnome-wm button-layout ""
 	gsettings set $gnome-sound theme-name "freedesktop"
 	gsettings set $gnome-sound input-feedback-sounds true
 	gsettings set $gnome-sound event-sounds true
 }
-seat seat0 xcursor_theme Bibata-Modern-Classic 24
 
 #exec gentoo-pipewire-launcher restart &
 
 # Play the startup sound
 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 80%
-exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
+exec mpv $HOME/.local/sway/sounds/soft-startup-sound-269291.mp3
 
 # If using this in a non-systemd distro
 #exec swayidle -C ~/.config/swayidle/config
@@ -55,7 +51,7 @@ exec mpv $HOME/.config/sway/soft-startup-sound-269291.mp3
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $HOME/.local/share/backgrounds/evening-sky.png fill
+output * bg $HOME/.local/share/backgrounds/Rosé\ Pine/'19. Rosé Pine.jpeg' fill
 
 # Or set a random wallpaper
 # set $wallpapers_path $HOME/.local/share/backgrounds/sway
@@ -255,16 +251,7 @@ default_border pixel 2
 gaps inner 5
 gaps outer 2
 
-# Make it more appealing 
-# target                 title       bg    text   indicator  border
-client.focused           $lavender $base $text  $rosewater $lavender
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
-
-include $HOME/.config/sway/config.d/*
+# include $HOME/.config/sway/config.d/*
 
 # bindsym $mod+i exec qutebrowser
 bindsym $mod+i exec exec uwsm app -- org.qutebrowser.qutebrowser.desktop

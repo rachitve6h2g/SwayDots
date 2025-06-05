@@ -1,7 +1,7 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "gruvbox-dark"
+theme = "rose-pine"
 
 [icons]
 icons = "material-nf"
@@ -9,9 +9,11 @@ icons = "material-nf"
 [[block]]
 block = "toggle"
 format = " $icon  idle_inhibit "
-command_state = "~/.config/i3status-rust/idle_state_toggle.sh"
-command_on = "pkill -STOP swayidle"
-command_off = "pkill -CONT swayidle"
+command_state = "systemctl --user status swayidle.service &> /dev/null; test $status -eq 0; and echo on"
+command_on = "systemctl --user stop swayidle.service"
+command_off = "systemctl --user start swayidle.service"
+interval = 10
+
 
 [[block]]
 block = "net"

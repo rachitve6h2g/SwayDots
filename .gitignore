@@ -56,3 +56,8 @@
 # Ignore the lazy-lock.json in NeoVim 
 # For better upgrade and stuff
 /nvim/.config/nvim/lazy-lock.json
+
+# Ignore everything inside the cmus directory
+/cmus/.config/cmus/**
+# Except the rc file
+!/cmus/.config/cmus/rc

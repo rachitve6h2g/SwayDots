@@ -6,14 +6,14 @@ on-button-middle=exec makoctl menu -n "$id" wofi -S dmenu -p 'Select Action: '
 
 font=monospace 11
 
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#cba6f7
-progress-color=over #313244
+background-color=#191724
+text-color=#e0def4
+border-color=#ebbcba
+progress-color=over #403d52
 
 border-radius=10
 icons=1
-icon-path=/home/krish/.local/share/icons/Gruvbox-Plus-Dark
+icon-path=/home/krish/.local/share/icons/rose-pine-icons
 markup=1
 
 default-timeout=5000
@@ -23,4 +23,4 @@ ignore-timeout=1
 invisible=1
 
 [urgency=high]
-border-color=#fab387
+border-color=#eb6f92
