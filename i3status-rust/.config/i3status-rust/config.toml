@@ -7,15 +7,6 @@ theme = "rose-pine"
 icons = "material-nf"
 
 [[block]]
-block = "toggle"
-format = " $icon  idle_inhibit "
-command_state = "systemctl --user status swayidle.service &> /dev/null; test $status -eq 0; and echo on"
-command_on = "systemctl --user stop swayidle.service"
-command_off = "systemctl --user start swayidle.service"
-interval = 10
-
-
-[[block]]
 block = "net"
 format = " $icon {$signal_strength $ssid $frequency|Wired connection} "
 format_alt = " ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) on $device "

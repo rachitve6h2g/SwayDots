@@ -63,3 +63,5 @@
 /cmus/.config/cmus/**
 # Except the rc file
 !/cmus/.config/cmus/rc
+!/cmus/.config/cmus/rose-pine.theme
+!/cmus/.config/cmus/autosave

@@ -78,10 +78,11 @@ c.url.searchengines['gen2'] = "https://packages.gentoo.org/packages/search?q={}"
 c.url.searchengines['gen2overlay']: "https://gpo.zugaina.org/Search?search={}"
 c.url.searchengines['gw'] = "https://wiki.gentoo.org/index.php?search={}"
 
-c.content.headers.user_agent = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)"
-    " Chrome/80.0.3987.163 Safari/537.36"
-)
+# NOTE: These lines cause cloudfare loop of "Verify if you are a Human"
+# c.content.headers.user_agent = (
+#     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)"
+#     " Chrome/80.0.3987.163 Safari/537.36"
+# )
 
 c.content.javascript.clipboard = 'access'
 

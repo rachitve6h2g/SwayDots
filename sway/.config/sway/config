@@ -43,7 +43,7 @@ exec_always {
 
 # Play the startup sound
 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 80%
-exec mpv $HOME/.local/sway/sounds/soft-startup-sound-269291.mp3
+exec mpv $HOME/.local/share/sway/sounds/soft-startup-sound-269291.mp3
 
 # If using this in a non-systemd distro
 #exec swayidle -C ~/.config/swayidle/config
@@ -265,19 +265,10 @@ bindsym $mod+x exec killall wofi || $powermenu
 
 # Window rules from Gentoo wiki on sway
 for_window [app_id = "floating"] floating enable, border pixel 1
-for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [app_id = "floating_update"] floating enable, resize set width 1000 height 600
 for_window [title = "Administrator privileges required"] floating enable
-# 
-# for_window [title = "About Mozilla Firefox"] floating enable
-# for_window [window_role = "About"] floating enable
-# for_window [app_id="firefox" title="Library"] floating enable, border normal, sticky enable
-# for_window [app_id="org.nickvision.tubeconverter" title="Parabolic"] floating enable, border normal
-# for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, border normal, sticky enable, resize set width 50px height 50px
-# 
-# for_window [class="VirtualBoxVM" title="Create Virtual Machine"] floating enable, border normal
-# for_window [class="VirtualBoxVM" title="Archlinux-Soft Keyboard"] floating enable, border normal
-for_window [app_id="thunar" title="File Operation Progress"] floating enable, border normal
-for_window [app_id="thunar" title="%Thunar%"] floating enable
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
+for_window [title="(?:Jobs:)"] inhibit_idle open
 
 # For YouTube in qutebrowser
 for_window [app_id="org.qutebrowser.qutebrowser" title="%YouTube%"] inhibit_idle visible
