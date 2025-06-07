@@ -49,12 +49,6 @@
 !/sway/.config/systemd/user/swaypolkitagent.service
 !/sway/.config/systemd/user/wlsunset.service
 
-# Also ignore everything inside the sway local directory
-/sway/.local/**
-# Except the bin directory
-!/sway/.local/bin/
-!/sway/.local/bin/**
-
 # Ignore the lazy-lock.json in NeoVim 
 # For better upgrade and stuff
 /nvim/.config/nvim/lazy-lock.json
