@@ -22,8 +22,8 @@ notification daemon). That way you won't have to install X dependencies.
 - [ ] Reduce swappiness
 - [ ] Setup VSCodium for Coding (theme and all)
 - [ ] Make systemd timer to regularly clear cache files of 'Qutebrowser and other stuff'
-- [ ] Get /etc/portage pushed to git as well (make the portage directory as a git directory).
+- [X] Get /etc/portage pushed to git as well (make the portage directory as a git directory).
 - [ ] Learn more about dispatch-conf, etc-update and cfg-update commands in Gentoo
-- [ ] Shift zsh to zinit plugin for working in any distro
-- [ ] Setup screenshot in sway
+- [X] Shift zsh to zinit plugin for working in any distro
+- [X] Setup screenshot in sway
 - [ ] Get [this](https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/config/hypr/scripts/volume) script for volume change working for wpctl and there's a similar one for brightness.

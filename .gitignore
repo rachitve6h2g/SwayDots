@@ -10,6 +10,8 @@
 # But track these
 !/qutebrowser/.local/share/qutebrowser/userscripts/
 !/qutebrowser/.local/share/qutebrowser/userscripts/**
+!/qutebrowser/.local/share/qutebrowser/userstyles/
+!/qutebrowser/.local/share/qutebrowser/userstyles/**
 
 # And ignore the qsettings/QtProject.conf
 /qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
